@@ -1,0 +1,42 @@
+{
+  "name": "richtextformat",
+  "version": "1.0.0",
+  "description": "网页富文本格式游戏unity、egret引擎支持的格式",
+  "main": "dist/richtextformat.cjs.js",
+  "module": "dist/richtextformat.esm.js",
+  "browser": "dist/richtextformat.umd.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "node test/test.js",
+    "pretest": "npm run build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "rollup": "^1.29.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fzxiang/richTextFormat.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "rich",
+    "text",
+    "unity",
+    "egret",
+    "code",
+    "format",
+    "富文本",
+    "游戏"
+  ],
+  "author": "Alson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fzxiang/richTextFormat/issues"
+  },
+  "homepage": "https://github.com/fzxiang/richTextFormat#readme"
+}
