@@ -7,7 +7,7 @@ export default [
 	{
 		input: 'src/main.js',
 		output: {
-			name: 'richTextformat',
+			name: 'richTextFormat',
 			file: pkg.browser,
 			format: 'umd',
 		},
