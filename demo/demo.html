@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script>
+  <script src="../dist/richtextformat.umd.js"></script>
+</head>
+<body style="padding: 60px">
+  <div id="div1"></div>
+
+  <button id="transfer">转化</button>
+
+  <div style="display: flex;">
+    <div style="flex:1">
+      unity:
+      <textarea style="width: 100%; height: 300px;" id="unity"></textarea>
+    </div>
+    <div style="flex:1">
+      egret:
+      <textarea style="width: 100%; height: 300px;" id="egret"></textarea>
+    </div>
+  </div>
+  <script>
+    const E = window.wangEditor
+    const editor = new E('#div1')
+    // 配置菜单栏，删减菜单，调整顺序
+    editor.config.menus = [
+      'fontSize',
+      'foreColor',
+      'bold',
+      'lineHeight',
+      'justify',
+      'link',
+      'italic',
+      'underline',
+      'undo',
+      'redo',
+    ]
+
+    // 或者 const editor = new E( document.getElementById('div1') )
+    editor.create()
+
+    document.getElementById('transfer').addEventListener('click', function() {
+      const htmlStr = editor.txt.html()
+      document.getElementById('unity').value = richTextFormat.parseUnity(htmlStr)
+      document.getElementById('egret').value = richTextFormat.parseEgret(htmlStr)
+      // document.getElementById('egret').value = richTextFormat.parseEgret(htmlStr)
+    })
+
+  </script>
+</body>
+</html>
