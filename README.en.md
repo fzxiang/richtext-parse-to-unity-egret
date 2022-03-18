@@ -1,0 +1,3 @@
+# richTextFormat
+
+It's translating...
