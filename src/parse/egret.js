@@ -1,3 +1,5 @@
+import { rgbToHex } from '../utils'
+
 export function getTagNameStartEgret(htmlElement, set) {
   //转义H5富文本格式头部标签
   let color = rgbToHex(htmlElement.style['color'])

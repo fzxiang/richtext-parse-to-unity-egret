@@ -30,7 +30,7 @@ export function parseEgret(htmlStr, set) {
     if (e instanceof HTMLElement) {
       text +=
         getTagNameStartEgret(e, set) +
-        parseH5(e.innerHTML, set) +
+        parseEgret(e.innerHTML, set) +
         getTagNameEndEgret(e)
       continue
     }
