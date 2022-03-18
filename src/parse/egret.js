@@ -1,4 +1,4 @@
-export function getTagNameStartH5(htmlElement, set) {
+export function getTagNameStartEgret(htmlElement, set) {
   //转义H5富文本格式头部标签
   let color = rgbToHex(htmlElement.style['color'])
   let size = htmlElement.style['font-size'].replace('px', '')
@@ -26,8 +26,7 @@ export function getTagNameStartH5(htmlElement, set) {
         str += ` color=${color}`
       }
       if (size) {
-        const index = set.fontSize.code.indexOf(+size)
-        str += ` size=${set.size ? set.size[index] : +size}`
+        str += ` size=${set.sizeMap(size)}`
       }
       str += ' >'
       return str
@@ -52,7 +51,7 @@ export function getTagNameStartH5(htmlElement, set) {
   }
 }
 
-export function getTagNameEndH5(htmlElement) {
+export function getTagNameEndEgret(htmlElement) {
   // const align = htmlElement.style['text-align']
   // const line_height = htmlElement.style['line-height']
   let str = ''

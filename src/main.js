@@ -1,5 +1,5 @@
 import { getTagNameStartUnity, getTagNameEndUnity } from './parse/unity.js'
-import { getTagNameStartH5, getTagNameEndH5 } from './parse/h5.js'
+import { getTagNameStartEgret, getTagNameEndEgret } from './parse/egret.js'
 
 export function parseUnity(htmlStr, set) {
   // 转义成unity支持格式
@@ -20,7 +20,7 @@ export function parseUnity(htmlStr, set) {
   return text
 }
 
-export function parseH5(htmlStr, set) {
+export function parseEgret(htmlStr, set) {
   // 转义成H5支持格式
   let ele = document.createElement('div')
   ele.innerHTML = htmlStr
@@ -29,9 +29,9 @@ export function parseH5(htmlStr, set) {
   for (let e of ele.childNodes) {
     if (e instanceof HTMLElement) {
       text +=
-        getTagNameStartH5(e, set) +
+        getTagNameStartEgret(e, set) +
         parseH5(e.innerHTML, set) +
-        getTagNameEndH5(e)
+        getTagNameEndEgret(e)
       continue
     }
     text += e.textContent

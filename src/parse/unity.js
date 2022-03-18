@@ -42,8 +42,7 @@ export function getTagNameStartUnity(htmlElement, set) {
       }
       if (size) {
         // <font size="1"></font> 字号转化
-        const index = set.fontSize.code.indexOf(+size)
-        str += `<size=${set.size ? set.size[index] : size}>`
+        str += `<size=${set.sizeMap(size)}>`
       }
       return str
     case 'span':
