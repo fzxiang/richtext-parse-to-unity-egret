@@ -6,8 +6,8 @@
   "module": "dist/richtextformat.esm.js",
   "browser": "dist/richtextformat.umd.js",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "build": "rollup --config",
+    "dev": "rollup --config --watch",
     "test": "node test/test.js",
     "pretest": "npm run build"
   },

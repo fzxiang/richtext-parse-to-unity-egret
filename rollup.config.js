@@ -7,9 +7,9 @@ export default [
 	{
 		input: 'src/main.js',
 		output: {
-			name: 'howLongUntilLunch',
+			name: 'richTextformat',
 			file: pkg.browser,
-			format: 'umd'
+			format: 'umd',
 		},
 		plugins: [
 			resolve(), // so Rollup can find `ms`
@@ -25,7 +25,7 @@ export default [
 	// `file` and `format` for each target)
 	{
 		input: 'src/main.js',
-		external: ['ms'],
+		// external: ['ms'],
 		output: [
 			{ file: pkg.main, format: 'cjs' },
 			{ file: pkg.module, format: 'es' }
