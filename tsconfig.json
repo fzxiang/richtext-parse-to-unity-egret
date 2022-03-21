@@ -30,6 +30,13 @@
       "node"
     ],
   },
+  "ts-node": {
+    "transpileOnly": true,
+    "files": true,
+    "compilerOptions": {
+      "rootDir": "."
+    }
+  },
   "include": [
     "src/**/*",
   ],
