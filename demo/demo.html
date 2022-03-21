@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo</title>
   <script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script>
-  <script src="../dist/richtextformat.umd.js"></script>
+  <script src="../dist/richtext-parser.umd.js"></script>
 </head>
 <body style="padding: 60px">
   <div id="div1"></div>
@@ -45,9 +45,9 @@
 
     document.getElementById('transfer').addEventListener('click', function() {
       const htmlStr = editor.txt.html()
-      document.getElementById('unity').value = richTextFormat.parseUnity(htmlStr)
-      document.getElementById('egret').value = richTextFormat.parseEgret(htmlStr)
-      // document.getElementById('egret').value = richTextFormat.parseEgret(htmlStr)
+      document.getElementById('unity').value = richtext-parser.parseUnity(htmlStr)
+      document.getElementById('egret').value = richtext-parser.parseEgret(htmlStr)
+      // document.getElementById('egret').value = richtext-parser.parseEgret(htmlStr)
     })
 
   </script>

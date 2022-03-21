@@ -1,10 +1,10 @@
 {
-  "name": "richtextformat",
+  "name": "richtext-parser",
   "version": "1.0.0",
   "description": "网页富文本格式游戏unity、egret引擎支持的格式",
-  "main": "dist/richtextformat.cjs.js",
-  "module": "dist/richtextformat.esm.js",
-  "browser": "dist/richtextformat.umd.js",
+  "main": "dist/richtext-parser.cjs.js",
+  "module": "dist/richtext-parser.esm.js",
+  "browser": "dist/richtext-parser.umd.js",
   "scripts": {
     "build": "rollup --config",
     "dev": "rollup --config --watch",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fzxiang/richTextFormat.git"
+    "url": "git+https://github.com/fzxiang/richtext-parser.git"
   },
   "files": [
     "dist"
@@ -38,7 +38,7 @@
   "author": "Alson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fzxiang/richTextFormat/issues"
+    "url": "https://github.com/fzxiang/richtext-parser/issues"
   },
-  "homepage": "https://github.com/fzxiang/richTextFormat#readme"
+  "homepage": "https://github.com/fzxiang/richtext-parser#readme"
 }

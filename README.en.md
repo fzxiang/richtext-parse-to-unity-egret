@@ -1,3 +1,3 @@
-# richTextFormat
+# richtext-parser
 
 It's translating...

@@ -1,29 +1,29 @@
-# richTextFormat
+# richtext-parser
 
 **中文** | [English](./README.en.md)
 
 ## 简介
 
-richTextFormat是一个工具库，用于web富文本转化为游戏引擎（unity、egret）支持的格式。
+richtext-parser是一个工具库，用于web富文本转化为游戏引擎（unity、egret）支持的格式。
 
 ## 使用方式
 - browser
   
 ``` javascript
-<script src="richTextFormat.js"></script>
+<script src="richtext-parser.js"></script>
 <script>
-  const { parseUnity, parseEgret } = window.richTextFormat
+  const { parseUnity, parseEgret } = window.richtext-parser
 </script>
 ```
 
 - node
 ``` bash
 $ npm i -g npm
-$ npm i richTextFormat
+$ npm i richtext-parser
 ```
 ``` typescript
 // 引入两种转义方法
-const { parseUnity, parseEgret } = require('richTextFormat');
+const { parseUnity, parseEgret } = require('richtext-parser');
 
 /***
  * @description 转义unity支持的富文本格式
@@ -89,17 +89,3 @@ web富文本格式
 
 ## 相关链接
 - [unity富文本格式规则](http://digitalnativestudios.com/textmeshpro/docs/rich-text)
-
-
-<style>
-table th:first-of-type {
-  width: 150pt;
-}
-table th:nth-of-type(2) {
-  width: 150pt;
-}
-table th:nth-of-type(3) {
-  width: 150pt;
-
-}
-</style>
