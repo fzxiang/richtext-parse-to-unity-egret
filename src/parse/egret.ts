@@ -1,7 +1,10 @@
 import { SetConfig } from '@/types'
 import { rgbToHex } from '@/utils'
 
-export function getTagNameStartEgret(htmlElement: HTMLElement, set: SetConfig): string {
+export function getTagNameStartEgret(
+  htmlElement: HTMLElement,
+  set: SetConfig
+): string {
   //转义H5富文本格式头部标签
   let color = rgbToHex(htmlElement.style['color'])
   let size = htmlElement.style['font-size'].replace('px', '')
@@ -44,7 +47,7 @@ export function getTagNameStartEgret(htmlElement: HTMLElement, set: SetConfig): 
       str += ' >'
       return str
     case 'a':
-      const name  = htmlElement.getAttribute('name')
+      const name = htmlElement.getAttribute('name')
       if (name) {
         str += `<a href='event:openURL_${name.slice(1)}'>`
       }

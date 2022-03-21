@@ -5,11 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Demo</title>
-  <script src="https://cdn.jsdelivr.net/npm/wangeditor@latest/dist/wangEditor.min.js"></script>
+  <!-- 引入 css -->
+  <link href="https://cdn.jsdelivr.net/npm/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+  <!-- 引入 js -->
+  <script src="https://cdn.jsdelivr.net/npm/@wangeditor/editor@latest/dist/index.min.js"></script>
   <script src="../dist/richtext-parser.umd.js"></script>
 </head>
 <body style="padding: 60px">
-  <div id="div1"></div>
+  <div id="div2"></div>
+  <div id="div1" style="height: 500px;"></div>
+
 
   <button id="transfer">转化</button>
 
@@ -23,28 +28,48 @@
       <textarea style="width: 100%; height: 300px;" id="egret"></textarea>
     </div>
   </div>
+
   <script>
     const E = window.wangEditor
-    const editor = new E('#div1')
-    // 配置菜单栏，删减菜单，调整顺序
-    editor.config.menus = [
-      'fontSize',
-      'foreColor',
-      'bold',
-      'lineHeight',
-      'justify',
-      'link',
-      'italic',
-      'underline',
-      'undo',
-      'redo',
-    ]
 
-    // 或者 const editor = new E( document.getElementById('div1') )
-    editor.create()
+    const editor = E.createEditor({
+      selector: '#div1',
+      config: {
+        MENU_CONF: {},
+        placeholder: '请输入内容'
+      },
+      mode: 'defalut'
+    })
+
+    const toolbar = E.createToolbar({
+      editor,
+      selector: '#div2',
+      config: {
+        toolbarKeys: [
+          'bold',
+          'italic',
+          'underline',
+          'color',
+          '|',
+          'fontSize',
+          'lineHeight',
+          '|', 
+          'justifyLeft',
+          'justifyCenter',
+          'justifyRight',
+          '|', 
+          'undo',
+          'redo',
+          '|', 
+          'emotion',
+          'fullScreen',
+        ],
+      }
+    })
+
 
     document.getElementById('transfer').addEventListener('click', function() {
-      const htmlStr = editor.txt.html()
+      const htmlStr = editor.getHtml()
       const { parseEgret, parseUnity } = window['richtext-parser']
       const set = {
         sizeMap: {

@@ -1,7 +1,10 @@
 import { SetConfig } from '../types'
 import { rgbToHex } from '../utils'
 
-export function getTagNameStartUnity(htmlElement: HTMLElement, set: SetConfig):string {
+export function getTagNameStartUnity(
+  htmlElement: HTMLElement,
+  set: SetConfig
+): string {
   //转义头部标签
   const align = htmlElement.style['text-align']
   const line_height = htmlElement.style['line-height']
@@ -24,11 +27,9 @@ export function getTagNameStartUnity(htmlElement: HTMLElement, set: SetConfig):s
       }
       return str
 
-
     case 'em':
     case 'i':
       return '<i>'
-
 
     case 'p':
     case 'div':
@@ -39,7 +40,6 @@ export function getTagNameStartUnity(htmlElement: HTMLElement, set: SetConfig):s
         str += `<align=${align}>`
       }
       return str
-
 
     case 'font':
       // font标签情况下字号和颜色
@@ -53,7 +53,6 @@ export function getTagNameStartUnity(htmlElement: HTMLElement, set: SetConfig):s
         str += `<size=${set.sizeMap[size]}>`
       }
       return str
-
 
     case 'span':
       if (color) {
@@ -81,17 +80,15 @@ export function getTagNameStartUnity(htmlElement: HTMLElement, set: SetConfig):s
       }
       return str
 
-
     case 'u':
       return '<u>'
-
 
     default:
       return ''
   }
 }
 
-export function getTagNameEndUnity(htmlElement: HTMLElement):string {
+export function getTagNameEndUnity(htmlElement: HTMLElement): string {
   const align = htmlElement.style['text-align']
   const line_height = htmlElement.style['line-height']
   let color = rgbToHex(htmlElement.style['color'])

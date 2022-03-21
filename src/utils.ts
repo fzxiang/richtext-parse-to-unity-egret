@@ -1,4 +1,4 @@
-export function rgbToHex(color: string): string|null {
+export function rgbToHex(color: string): string | null {
   //rgb转16进制颜色
   const regex = /^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/
   const match = color.match(regex)
