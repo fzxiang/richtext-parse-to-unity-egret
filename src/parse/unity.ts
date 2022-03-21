@@ -1,6 +1,7 @@
+import { SetConfig } from '../types'
 import { rgbToHex } from '../utils'
 
-export function getTagNameStartUnity(htmlElement, set) {
+export function getTagNameStartUnity(htmlElement: HTMLElement, set: SetConfig):string {
   //转义头部标签
   const align = htmlElement.style['text-align']
   const line_height = htmlElement.style['line-height']
@@ -22,9 +23,13 @@ export function getTagNameStartUnity(htmlElement, set) {
         str += `<size=${size}>`
       }
       return str
+
+
     case 'em':
     case 'i':
       return '<i>'
+
+
     case 'p':
     case 'div':
       if (line_height) {
@@ -34,17 +39,22 @@ export function getTagNameStartUnity(htmlElement, set) {
         str += `<align=${align}>`
       }
       return str
+
+
     case 'font':
-      color = htmlElement.color
-      size = htmlElement.size
+      // font标签情况下字号和颜色
+      color = htmlElement.getAttribute('color')
+      size = htmlElement.getAttribute('size')
       if (color) {
         str += `<color=${color}>`
       }
       if (size) {
         // <font size="1"></font> 字号转化
-        str += `<size=${set.sizeMap(size)}>`
+        str += `<size=${set.sizeMap[size]}>`
       }
       return str
+
+
     case 'span':
       if (color) {
         str += `<color=${color}>`
@@ -53,8 +63,11 @@ export function getTagNameStartUnity(htmlElement, set) {
         str += `<size=${size}>`
       }
       return str
+
+    /* 标签链接 */
     case 'a':
-      const { name, type } = htmlElement
+      const name = htmlElement.getAttribute('name')
+      const type = htmlElement.getAttribute('type')
       if (type === 'gameSystemLink') {
         // 内部链接
         if (name) {
@@ -67,14 +80,18 @@ export function getTagNameStartUnity(htmlElement, set) {
         }
       }
       return str
+
+
     case 'u':
       return '<u>'
+
+
     default:
       return ''
   }
 }
 
-export function getTagNameEndUnity(htmlElement) {
+export function getTagNameEndUnity(htmlElement: HTMLElement):string {
   const align = htmlElement.style['text-align']
   const line_height = htmlElement.style['line-height']
   let color = rgbToHex(htmlElement.style['color'])
@@ -124,8 +141,8 @@ export function getTagNameEndUnity(htmlElement) {
         return (str += '<br>')
       }
     case 'font':
-      color = htmlElement.color
-      size = htmlElement.size
+      color = htmlElement.getAttribute('color')
+      size = htmlElement.getAttribute('size')
       if (size) {
         str += `</size>`
       }

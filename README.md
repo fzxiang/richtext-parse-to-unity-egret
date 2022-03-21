@@ -12,7 +12,7 @@ richtext-parser是一个工具库，用于web富文本转化为游戏引擎（un
 ``` javascript
 <script src="richtext-parser.js"></script>
 <script>
-  const { parseUnity, parseEgret } = window.richtext-parser
+  const { parseUnity, parseEgret } = window['richtext-parser']
 </script>
 ```
 

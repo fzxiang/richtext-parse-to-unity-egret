@@ -1,6 +1,7 @@
-import { rgbToHex } from '../utils'
+import { SetConfig } from '@/types'
+import { rgbToHex } from '@/utils'
 
-export function getTagNameStartEgret(htmlElement, set) {
+export function getTagNameStartEgret(htmlElement: HTMLElement, set: SetConfig): string {
   //转义H5富文本格式头部标签
   let color = rgbToHex(htmlElement.style['color'])
   let size = htmlElement.style['font-size'].replace('px', '')
@@ -21,14 +22,14 @@ export function getTagNameStartEgret(htmlElement, set) {
     case 'div':
       return str
     case 'font':
-      color = htmlElement.color
-      size = htmlElement.size
+      color = htmlElement.getAttribute('color')
+      size = htmlElement.getAttribute('size')
       str += '<font'
       if (color) {
         str += ` color=${color}`
       }
       if (size) {
-        str += ` size=${set.sizeMap(size)}`
+        str += ` size=${set.sizeMap[size]}`
       }
       str += ' >'
       return str
@@ -43,7 +44,7 @@ export function getTagNameStartEgret(htmlElement, set) {
       str += ' >'
       return str
     case 'a':
-      const { name } = htmlElement
+      const name  = htmlElement.getAttribute('name')
       if (name) {
         str += `<a href='event:openURL_${name.slice(1)}'>`
       }
@@ -53,7 +54,7 @@ export function getTagNameStartEgret(htmlElement, set) {
   }
 }
 
-export function getTagNameEndEgret(htmlElement) {
+export function getTagNameEndEgret(htmlElement: HTMLElement): string {
   // const align = htmlElement.style['text-align']
   // const line_height = htmlElement.style['line-height']
   let str = ''
