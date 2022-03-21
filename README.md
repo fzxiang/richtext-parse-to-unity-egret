@@ -9,7 +9,7 @@ richtext-parser是一个工具库，用于web富文本转化为游戏引擎（un
 ## 使用方式
 - browser
   
-``` javascript
+``` HTML
 <script src="richtext-parser.js"></script>
 <script>
   const { parseUnity, parseEgret } = window['richtext-parser']
@@ -54,7 +54,7 @@ const unityText = parseUnity(htmlStr: string, {
 |下划线   |     ✔️     |    ❌  |
 |斜体   |     ✔️     |    ❌  |
 |行间距  |     ✔️     |     ❌   |
-|居左/居中/居右|     ✔️     |     ✔️   |
+|居左/居中/居右|     ✔️     |     ❌    |
 |跳转链接<br>[（跳转内部/跳转外部）](跳转规则 "跳转规则")|     ✔️     |     ✔️   |
 
 
