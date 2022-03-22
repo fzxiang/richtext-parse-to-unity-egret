@@ -5,6 +5,7 @@
 ## 简介
 
 richtext-parser是一个工具库，用于web富文本转化为游戏引擎（unity、egret）支持的格式。
+同时转义对老牌的富文本编辑器做了初步兼容，推荐使用[wangEditor](https://github.com/wangeditor-team/wangEditor)开源的富文本编辑器V4或V5版本
 
 ## 使用方式
 - browser

@@ -1,0 +1,5 @@
+{
+  "test": "<div><font color=\"#58b431\">第一行，无空格，颜色绿</font></div><div><font color=\"#c1ac61\">　　空俩格，32，颜色棕色</font></div>",
+  "expectUnity": "<color=#58b431>第一行，无空格，颜色绿</color><br><color=#c1ac61>　　空俩格，32，颜色棕色</color><br>",
+  "expectEgret": "<font color=#58b431 >第一行，无空格，颜色绿</font><br/><font color=#c1ac61 >　　空俩格，32，颜色棕色</font><br/>"
+}

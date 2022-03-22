@@ -3,7 +3,7 @@ import { rgbToHex } from '@/utils'
 
 export function getTagNameStartEgret(
   htmlElement: HTMLElement,
-  set: SetConfig
+  set?: SetConfig
 ): string {
   //转义H5富文本格式头部标签
   let color = rgbToHex(htmlElement.style['color'])
@@ -32,7 +32,9 @@ export function getTagNameStartEgret(
         str += ` color=${color}`
       }
       if (size) {
-        str += ` size=${set.sizeMap[size]}`
+        (set?.sizeMap)? 
+          str += ` size=${set.sizeMap[size]}` :
+          (str += '' && console.error(`富文本中有包含<forn size="${size}">标签, 需要在parseEgret传入字号配置: parseEgret(htmlStr, {1: 12, 2: 14, 3: 16, 4: 18, 5: 20, 6: 24, 7: 28})`))
       }
       str += ' >'
       return str

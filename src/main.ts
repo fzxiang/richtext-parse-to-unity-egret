@@ -1,8 +1,8 @@
-import { getTagNameStartUnity, getTagNameEndUnity } from './parse/unity.js'
-import { getTagNameStartEgret, getTagNameEndEgret } from './parse/egret.js'
-import { SetConfig } from './types.js'
+import { getTagNameStartUnity, getTagNameEndUnity } from '@/parse/unity'
+import { getTagNameStartEgret, getTagNameEndEgret } from '@/parse/egret'
+import { SetConfig } from '@/types'
 
-export function parseUnity(htmlStr: string, set: SetConfig): string {
+export function parseUnity(htmlStr: string, set?: SetConfig): string {
   // 转义成unity支持格式
   const ele = document.createElement('div')
   ele.innerHTML = htmlStr
@@ -21,7 +21,7 @@ export function parseUnity(htmlStr: string, set: SetConfig): string {
   return text
 }
 
-export function parseEgret(htmlStr: string, set: SetConfig): string {
+export function parseEgret(htmlStr: string, set?: SetConfig): string {
   // 转义成H5支持格式
   let ele = document.createElement('div')
   ele.innerHTML = htmlStr

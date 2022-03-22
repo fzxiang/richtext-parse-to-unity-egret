@@ -65,7 +65,6 @@ export default {
   globals: {
     'ts-jest': {
       tsconfig: {
-        rootDir: '.',
         target: 'esnext',
         sourceMap: true
       }
@@ -81,18 +80,11 @@ export default {
   // ],
 
   // An array of file extensions your modules use
-  // moduleFileExtensions: [
-  //   "js",
-  //   "jsx",
-  //   "ts",
-  //   "tsx",
-  //   "json",
-  //   "node"
-  // ],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'json'],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    '^@/(.*?)$': "<rootDir>/src"
+    '^@/(.*?)$': "<rootDir>/src/$1"
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -105,7 +97,7 @@ export default {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  // preset: undefined,
+  preset: 'ts-jest',
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -119,8 +111,6 @@ export default {
   // Reset the module registry before running each individual test
   // resetModules: false,
 
-  // A path to a custom resolver
-  // resolver: undefined,
 
   // Automatically restore mock state and implementation before every test
   // restoreMocks: false,
@@ -199,7 +189,7 @@ export default {
   // verbose: undefined,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
-  // watchPathIgnorePatterns: [],
+  watchPathIgnorePatterns: ['/node_modules/', '/dist/', '/.git/'],
 
   // Whether to use watchman for file crawling
   // watchman: true,
