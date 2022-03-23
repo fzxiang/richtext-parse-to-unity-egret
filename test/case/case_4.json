@@ -1,0 +1,16 @@
+{
+  "set": {
+    "sizeMap": {
+      "1": 12,
+      "2": 14,
+      "3": 16,
+      "4": 20,
+      "5": 26,
+      "6": 28,
+      "7": 32
+    }
+  },
+  "test": "<font size=\"5\">尊敬的道友：</font><br><font size=\"5\">为了给道友带来更好的游戏体验，助力修真之路，官方会根据各位道友的反馈，对游戏不断地进行<b><font color=\"#58b431\">优化调整</font></b>，修复<a name=\"#null\" type=\"gameSystemLink\"><u>已发现的各类问题</u></a></font><br><br><div style=\"text-align: right;\">【已知问题】</div><font size=\"5\"><div style=\"text-align: right;\">1、特定情况下无法进入出窍战斗地图，该问题将在后续更新中修复</div></font><br><div style=\"text-align: center;\">【2022/3/10&nbsp;9:00更新内容】</div><br><div style=\"text-align: right;\"><span style=\"font-size: 20px; color: rgb(193, 86, 3);\">【修复问题】</span></div><font size=\"4\" color=\"#c15603\"><div style=\"text-align: right;\">1、出窍时概率性出现卡死的情况</div><div style=\"text-align: right;\">2、出窍时概率性出现无法领奖的情况</div><div style=\"text-align: right;\">3、出窍对战中，概率性出现击杀同阵营玩家未扣天命值</div><div style=\"text-align: right;\">4、地宫通关后，概率性不显示“下一关”</div><div style=\"text-align: right;\">5、伙伴月姬的第二个温泉剧情无法跳转</div><div style=\"text-align: right;\">6、完成家族异兽日常任务无法领奖</div><div style=\"text-align: right;\">7、宗门擂台赛季结束未发送排名奖励</div><br><div style=\"text-align: right;\">【优化内容】</div><div style=\"text-align: right;\">1、出窍元神榜显示优化</div><div style=\"text-align: right;\">2、部分道具的批量使用增加拉条限制</div><div style=\"text-align: right;\">3、一键修炼自动卜卦次数计入七日任务</div><div style=\"text-align: right;\">4、部分功能红点显示逻辑优化</div><div style=\"text-align: right;\">5、地宫界面显示优化</div><div style=\"text-align: right;\">6、部分文本内容优化</div><div style=\"text-align: right;\">7、渡魂动画效果优化</div></font>",
+  "expectUnity": "<size=26>尊敬的道友：</size><br><size=26>为了给道友带来更好的游戏体验，助力修真之路，官方会根据各位道友的反馈，对游戏不断地进行<b><color=#58b431>优化调整</color></b>，修复<link=openSystem__@@__null><u>已发现的各类问题</u></link></size><br><br><align=right>【已知问题】</align><br><size=26><align=right>1、特定情况下无法进入出窍战斗地图，该问题将在后续更新中修复</align><br></size><br><align=center>【2022/3/10 9:00更新内容】</align><br><br><align=right><color=#c1563><size=20>【修复问题】</size></color></align><br><color=#c15603><size=20><align=right>1、出窍时概率性出现卡死的情况</align><br><align=right>2、出窍时概率性出现无法领奖的情况</align><br><align=right>3、出窍对战中，概率性出现击杀同阵营玩家未扣天命值</align><br><align=right>4、地宫通关后，概率性不显示“下一关”</align><br><align=right>5、伙伴月姬的第二个温泉剧情无法跳转</align><br><align=right>6、完成家族异兽日常任务无法领奖</align><br><align=right>7、宗门擂台赛季结束未发送排名奖励</align><br><br><align=right>【优化内容】</align><br><align=right>1、出窍元神榜显示优化</align><br><align=right>2、部分道具的批量使用增加拉条限制</align><br><align=right>3、一键修炼自动卜卦次数计入七日任务</align><br><align=right>4、部分功能红点显示逻辑优化</align><br><align=right>5、地宫界面显示优化</align><br><align=right>6、部分文本内容优化</align><br><align=right>7、渡魂动画效果优化</align><br></size></color>",
+  "expectEgret": "<font size=26 >尊敬的道友：</font><br/><font size=26 >为了给道友带来更好的游戏体验，助力修真之路，官方会根据各位道友的反馈，对游戏不断地进行<font bold=\"true\" ><font color=#58b431 >优化调整</font></font>，修复<a href='event:openURL_null'>已发现的各类问题</a></font><br/><br/>【已知问题】<br/><font size=26 >1、特定情况下无法进入出窍战斗地图，该问题将在后续更新中修复<br/></font><br/>【2022/3/10 9:00更新内容】<br/><br/><font color=#c1563 size=20 >【修复问题】</font><br/><font color=#c15603 size=20 >1、出窍时概率性出现卡死的情况<br/>2、出窍时概率性出现无法领奖的情况<br/>3、出窍对战中，概率性出现击杀同阵营玩家未扣天命值<br/>4、地宫通关后，概率性不显示“下一关”<br/>5、伙伴月姬的第二个温泉剧情无法跳转<br/>6、完成家族异兽日常任务无法领奖<br/>7、宗门擂台赛季结束未发送排名奖励<br/><br/>【优化内容】<br/>1、出窍元神榜显示优化<br/>2、部分道具的批量使用增加拉条限制<br/>3、一键修炼自动卜卦次数计入七日任务<br/>4、部分功能红点显示逻辑优化<br/>5、地宫界面显示优化<br/>6、部分文本内容优化<br/>7、渡魂动画效果优化<br/></font>"
+}
