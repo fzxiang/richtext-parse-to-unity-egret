@@ -1,10 +1,10 @@
 {
-  "name": "richtext-parser",
+  "name": "richtext-parse-to-unity-egret",
   "version": "1.0.0",
   "description": "网页富文本格式游戏unity、egret引擎支持的格式",
-  "main": "dist/richtext-parser.cjs.js",
-  "module": "dist/richtext-parser.esm.js",
-  "browser": "dist/richtext-parser.umd.js",
+  "main": "dist/richtext-parse-to-unity-egret.cjs.js",
+  "module": "dist/richtext-parse-to-unity-egret.esm.js",
+  "browser": "dist/richtext-parse-to-unity-egret.umd.js",
   "scripts": {
     "serve": "serve -p 5100",
     "open": "open http://localhost:5100/demo/demo.html",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fzxiang/richtext-parser.git"
+    "url": "git+https://github.com/fzxiang/richtext-parse-to-unity-egret.git"
   },
   "files": [
     "dist"
@@ -65,7 +65,7 @@
   "author": "Alson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fzxiang/richtext-parser/issues"
+    "url": "https://github.com/fzxiang/richtext-parse-to-unity-egret/issues"
   },
-  "homepage": "https://github.com/fzxiang/richtext-parser#readme"
+  "homepage": "https://github.com/fzxiang/richtext-parse-to-unity-egret#readme"
 }

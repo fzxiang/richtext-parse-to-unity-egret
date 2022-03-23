@@ -1,30 +1,30 @@
-# richtext-parser
+# richtext-parse-to-unity-egret
 
 [中文](./README.md) | **English**
 
 ## Introduction
 
-richtext-parser is a library of tools for converting web rich text into formats supported by game engines (unity, egret).
+richtext-parse-to-unity-egret is a library of tools for converting web rich text into formats supported by game engines (unity, egret).
 Simple compatibility with older rich text editors，Recommend using [wangEditor](https://github.com/wangeditor-team/wangEditor) open source rich text editor V4 or V5 version
 
 ## Usage
 - browser
   
 ``` HTML
-<script src="richtext-parser.js"></script>
+<script src="richtext-parse-to-unity-egret.js"></script>
 <script>
-  const { parseUnity, parseEgret } = window['richtext-parser']
+  const { parseUnity, parseEgret } = window['richtext-parse-to-unity-egret']
 </script>
 ```
 
 - node
 ``` bash
 $ npm i -g npm
-$ npm i richtext-parser
+$ npm i richtext-parse-to-unity-egret
 ```
 ``` typescript
 // require of two methods
-const { parseUnity, parseEgret } = require('richtext-parser');
+const { parseUnity, parseEgret } = require('richtext-parse-to-unity-egret');
 
 /***
  * @description The following are used as unity example

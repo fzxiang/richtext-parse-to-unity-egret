@@ -12,7 +12,7 @@ export default {
 	],
 	output: [
 		{
-			name: 'richtext-parser',
+			name: 'richtext-parse-to-unity-egret',
 			file: pkg.browser,
 			format: 'umd',
 		},
