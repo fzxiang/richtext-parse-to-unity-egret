@@ -57,7 +57,7 @@
     "*.js": [
       "prettier --writer"
     ],
-    "*.ts": [
+    "*.ts?(x)": [
       "eslint",
       "prettier --parser=typescript --writer"
     ]
