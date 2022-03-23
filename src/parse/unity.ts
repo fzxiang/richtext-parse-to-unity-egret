@@ -49,7 +49,7 @@ export function getTagNameStartUnity(
       if (size) {
         // <font size="1"></font> 字号转化
         (set?.sizeMap)? 
-          str += ` size=${set.sizeMap[size]}` :
+          str += `<size=${set.sizeMap[size]}>` :
           (str += '' && console.error(`富文本中有包含<forn size="${size}">标签, 需要在parseUnity传入字号配置: parseUnity(htmlStr, {1: 12, 2: 14, 3: 16, 4: 18, 5: 20, 6: 24, 7: 28})`))
       }
       return str
