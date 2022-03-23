@@ -16,13 +16,13 @@ export function getTagNameStartUnity(
     //  <b style="color:rgb(1,1,1);font-size:15px"></b>
     case 'strong':
     case 'b':
-      str += '<b>'
-      if (color) {
-        str += `<color=${color}>`
-      }
       if (size) {
         str += `<size=${size}>`
       }
+      if (color) {
+        str += `<color=${color}>`
+      }
+      str += '<b>'
       return str
 
     case 'em':
@@ -98,13 +98,13 @@ export function getTagNameEndUnity(htmlElement: HTMLElement): string {
   switch (htmlElement.nodeName.toLocaleLowerCase()) {
     case 'strong':
     case 'b':
-      if (size) {
-        str += `</size>`
-      }
+      str += '</b>'
       if (color) {
         str += `</color>`
       }
-      str += '</b>'
+      if (size) {
+        str += `</size>`
+      }
       return str
     case 'em':
     case 'i':
