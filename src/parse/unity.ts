@@ -14,8 +14,6 @@ export function getTagNameStartUnity(
   switch (htmlElement.nodeName.toLocaleLowerCase()) {
     // unity 解析需要拆分出color和size单独字段
     //  <b style="color:rgb(1,1,1);font-size:15px"></b>
-    //  ===>
-    //
     case 'strong':
     case 'b':
       str += '<b>'
