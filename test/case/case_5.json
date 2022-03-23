@@ -1,0 +1,5 @@
+{
+  "test": "<p><strong style=\"color: rgb(225, 60, 57); font-size: 24px;\"><span>test</span></strong></p>", 
+  "expectUnity": "<size=24><color=#e13c39><b>test</b></color></size><br>",
+  "expectEgret": "<font bold=\"true\" color=#e13c39 size=24 ><font >test</font></font><br/>"
+}
