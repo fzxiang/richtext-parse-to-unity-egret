@@ -1,6 +1,6 @@
 {
   "name": "richtext-parse-to-unity-egret",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "网页富文本格式游戏unity、egret引擎支持的格式",
   "main": "dist/richtext-parse-to-unity-egret.cjs.js",
   "module": "dist/richtext-parse-to-unity-egret.esm.js",
