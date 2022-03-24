@@ -11,7 +11,7 @@ richtext-parse-to-unity-egret是一个工具库，用于web富文本转化为游
 - browser
   
 ``` HTML
-<script src="richtext-parse-to-unity-egret.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/richtext-parse-to-unity-egret"></script>
 <script>
   const { parseUnity, parseEgret } = window['richtext-parse-to-unity-egret']
 </script>

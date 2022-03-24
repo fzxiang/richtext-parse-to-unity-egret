@@ -11,7 +11,7 @@ Simple compatibility with older rich text editors，Recommend using [wangEditor]
 - browser
   
 ``` HTML
-<script src="richtext-parse-to-unity-egret.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/richtext-parse-to-unity-egret"></script>
 <script>
   const { parseUnity, parseEgret } = window['richtext-parse-to-unity-egret']
 </script>
