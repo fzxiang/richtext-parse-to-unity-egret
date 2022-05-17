@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <!-- 引入 css -->
+  <link href="https://cdn.jsdelivr.net/npm/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
+  <!-- 引入 js -->
+  <script src="https://cdn.jsdelivr.net/npm/@wangeditor/editor@latest/dist/index.min.js"></script>
+  
+  <script src="../dist/richtext-parse-to-unity-egret.umd.js"></script>
+
+  <!-- codemirror js -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/lib/codemirror.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/addon/hint/show-hint.css">
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/lib/codemirror.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/addon/hint/show-hint.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/addon/hint/xml-hint.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/addon/hint/html-hint.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/mode/xml/xml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/mode/javascript/javascript.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/codemirror@5.65.3/mode/css/css.js"></script>
+
+  <!-- prettier -->
+  <script src="https://unpkg.com/prettier@2.6.2/parser-html.js"></script>
+  <script src="https://unpkg.com/prettier@2.6.2/standalone.js"></script>
+</head>
+<body style="padding: 60px">
+  <div style="z-index:999">
+    <div id="div2"></div>
+    <div id="div1" style="height: 500px;"></div>
+  </div>
+
+
+  <button id="transfer">转化</button>
+
+  <div style="display: flex;">
+    <div style="flex:1">
+      unity:
+      <div id="unity">
+      </div>
+    </div>
+    <div style="flex:1">
+      egret:
+      <div id="egret"></div>
+    </div>
+  </div>
+
+  <script>
+    const E = window.wangEditor
+
+    const editor = E.createEditor({
+      selector: '#div1',
+      config: {
+        MENU_CONF: {},
+        placeholder: '请输入内容',
+      },
+      mode: 'simple'
+    })
+
+
+    const toolbar = E.createToolbar({
+      editor,
+      selector: '#div2',
+      config: {
+        toolbarKeys: [
+          'bold',
+          'italic',
+          'underline',
+          'color',
+          '|',
+          'fontSize',
+          '|', 
+          'lineHeight',
+          '|', 
+          'justifyLeft',
+          'justifyCenter',
+          'justifyRight',
+          '|', 
+          'undo',
+          'redo',
+          '|', 
+          'clearStyle',
+          'emotion',
+          'fullScreen',
+        ],
+      }
+    })
+
+    const unity = CodeMirror(document.getElementById('unity'), {
+      value: '',
+      mode: "text/html",
+      extraKeys: {"Ctrl-Space": "autocomplete"},
+    });
+
+    const egret = CodeMirror(document.getElementById('egret'), {
+      value: '',
+      mode:  "text/html",
+    });
+
+    const prettierConfig =  {
+        parser: "html",
+        plugins: prettierPlugins,
+        "arrowParens": "always",
+        "bracketSameLine": false,
+        "bracketSpacing": true,
+        "embeddedLanguageFormatting": "auto",
+        "htmlWhitespaceSensitivity": "ignore",
+        "insertPragma": false,
+        "jsxSingleQuote": false,
+        "proseWrap": "preserve",
+        "quoteProps": "as-needed",
+        "requirePragma": false,
+        "semi": true,
+        "singleQuote": false,
+        "tabWidth": 2,
+        "trailingComma": "es5",
+        "useTabs": false,
+        "vueIndentScriptAndStyle": false,
+        "printWidth": 40
+      }
+    document.getElementById('transfer').addEventListener('click', function() {
+      const htmlStr = editor.getHtml()
+      const { parseEgret, parseUnity } = window['richtext-parse-to-unity-egret']
+      const egretPrettier = prettier.format(parseEgret(htmlStr), prettierConfig)
+      egret.setValue(egretPrettier)
+    })
+
+  </script>
+</body>
+</html>
