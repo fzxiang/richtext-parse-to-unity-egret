@@ -1,10 +1,10 @@
-import { SetConfig } from '@/types'
-import { rgbToHex } from '@/utils'
+import { getAllAttrs, rgbToHex } from '@/utils'
 
-const handleBold = ({color, size}) => {
+const handleBold = ({ style }) => {
+  const { textSize, color } = style
   let str = '<font bold=true'
-  color && (str += ` color=${color}`)
-  size && (str += ` size=${size}`)
+  color && (str += ` color=${rgbToHex(color)}`)
+  textSize && (str += ` size=${textSize}`)
   str += '>'
   return [str, '</font>']
 }
@@ -14,20 +14,22 @@ const handleBlock = ({}) => {
 }
 
 // 处理 <span></span> 标签
-const handleSpan = ({color, size}) => {
+const handleSpan = ({style}) => {
+  const { textSize, color } = style
   let str = '<font'
   if (color) {
-    str += ` color=${color}`
+    str += ` color=${rgbToHex(color)}`
   }
-  if (size) {
-    str += ` size=${size}`
+  if (textSize) {
+    str += ` size=${textSize}`
   }
   str += '>'
   return [str, '</font>']
 }
 
 // 处理 <a></a> 标签
-const handleA = ({name}) => {
+const handleA = ({attrs}) => {
+  const { name } = attrs
   let str = ''
   if (name) {
     str += `<a href='event:openURL_${name.slice(1)}'>`
@@ -39,7 +41,8 @@ const handleA = ({name}) => {
 const handleBr = () => {
   return ['', '<br>']
 }
-export const parseEgretRule = {
+
+const parseEgretRule = {
   'strong': handleBold,
   'b': handleBold,
   'p': handleBlock,
@@ -51,12 +54,11 @@ export const parseEgretRule = {
 
 export function getTagNameEgret(htmlElement: HTMLElement,): string[] {
   //转义H5富文本格式头部标签
-  let color = rgbToHex(htmlElement.style['color'])
-  let size = htmlElement.style['font-size'].replace('px', '')
-  const name = htmlElement.getAttribute('name')
+  const attrs = getAllAttrs(htmlElement)
+  const style = htmlElement.style
   const nodeName = htmlElement.nodeName.toLocaleLowerCase()
   if(parseEgretRule[nodeName]) {
-    return parseEgretRule[nodeName]({name, color, size})
+    return parseEgretRule[nodeName]({style, attrs})
   } else {
     return ['', '']
   }

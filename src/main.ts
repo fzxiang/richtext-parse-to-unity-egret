@@ -1,8 +1,7 @@
-import { getTagNameStartUnity, getTagNameEndUnity } from '@/parse/unity'
+import { getTagNameUnity } from '@/parse/unity'
 import { getTagNameEgret } from '@/parse/egret'
-import { SetConfig } from '@/types'
 
-export function parseUnity(htmlStr: string, set?: SetConfig): string {
+export function parseUnity(htmlStr: string): string {
   // 转义成unity支持格式
   const ele = document.createElement('div')
   ele.innerHTML = htmlStr
@@ -10,10 +9,8 @@ export function parseUnity(htmlStr: string, set?: SetConfig): string {
   let text = ''
   for (let e of ele.childNodes) {
     if (e instanceof HTMLElement) {
-      text +=
-        getTagNameStartUnity(e, set) +
-        parseUnity(e.innerHTML, set) +
-        getTagNameEndUnity(e)
+      const [start, end] = getTagNameUnity(e)
+      text += start + parseUnity(e.innerHTML) + end
       continue
     }
     text += e.textContent

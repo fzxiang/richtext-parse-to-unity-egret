@@ -9,3 +9,14 @@ export function rgbToHex(color: string): string | null {
         (+match[3]).toString(16)
     : color
 }
+
+export function getAllAttrs(elem: HTMLElement): Record<string, string>{
+  const res = {}
+  for (const key in elem.attributes) {
+    if (Object.prototype.hasOwnProperty.call(elem.attributes, key)) {
+      const attr = elem.attributes[key];
+      res[attr.nodeName] = attr.nodeValue
+    }
+  }
+  return res
+}

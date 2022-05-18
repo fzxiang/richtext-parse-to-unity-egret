@@ -126,7 +126,9 @@
       const htmlStr = editor.getHtml()
       const { parseEgret, parseUnity } = window['richtext-parse-to-unity-egret']
       const egretPrettier = prettier.format(parseEgret(htmlStr), prettierConfig)
+      const unityPrettier = prettier.format(parseUnity(htmlStr), prettierConfig)
       egret.setValue(egretPrettier)
+      unity.setValue(unityPrettier)
     })
 
   </script>
